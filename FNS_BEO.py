@@ -133,8 +133,8 @@ def crossover(Mpopulation, population, dim):
 
 def selection(Cpopulation, population, gp, Best_solu):
 
-    _, _, _, Cfitness, _ = surrogate_evalu(Cpopulation, gp, Best_solu)
-    _, _, _, pfitness, _ = surrogate_evalu(population, gp, Best_solu)
+    _, _, Cfitness, _, _ = surrogate_evalu(Cpopulation, gp, Best_solu)
+    _, _, pfitness, _, _ = surrogate_evalu(population, gp, Best_solu)
     for i in range(population_size):
         if Cfitness[i] > pfitness[i]:
             population[i] = Cpopulation[i]
